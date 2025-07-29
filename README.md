@@ -52,8 +52,8 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/sushant-tuladhar90/portfolio.git
-cd portfolio
+git clone https://github.com/sushant-tuladhar90/my_portfolio.git
+cd my_portfolio
 ```
 
 2. Install dependencies:
@@ -71,6 +71,23 @@ yarn dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🌐 Deployment
+
+### Netlify Deployment
+
+This portfolio is configured for easy deployment on Netlify:
+
+1. **Fork/Clone** this repository
+2. **Connect** to Netlify from your GitHub account
+3. **Build settings:**
+   - Build command: `npm run build`
+   - Publish directory: `out`
+4. **Deploy** and enjoy your live portfolio!
+
+### Live Demo
+
+Visit the live portfolio: [Your Netlify URL will be here after deployment]
 
 ## 📦 Build
 
