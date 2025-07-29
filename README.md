@@ -8,6 +8,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Responsive**: Fully responsive across all devices
 - **Animations**: Smooth animations using Framer Motion
 - **Interactive**: Engaging user interactions and hover effects
+- **Contact Form**: Functional contact form with email notifications
 - **SEO Optimized**: Meta tags and structured data for better search visibility
 - **Fast Performance**: Optimized for speed and performance
 - **Accessible**: Built with accessibility in mind
@@ -87,7 +88,9 @@ This portfolio is configured for easy deployment on Netlify:
 
 ### Live Demo
 
-Visit the live portfolio: [Your Netlify URL will be here after deployment]
+Visit the live portfolio: [Your deployed Netlify URL]
+
+**Contact Form**: The portfolio includes a fully functional contact form that sends emails directly to your inbox using Nodemailer and Netlify Functions.
 
 ## 📦 Build
 
