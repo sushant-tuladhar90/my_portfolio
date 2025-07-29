@@ -76,17 +76,19 @@ export default function Contact() {
     setSubmitStatus(null)
 
     try {
-      const response = await fetch('/.netlify/functions/send-email', {
+      // Use Netlify Forms instead of custom function
+      const formDataObj = new FormData()
+      formDataObj.append('name', formData.name)
+      formDataObj.append('email', formData.email)
+      formDataObj.append('subject', formData.subject)
+      formDataObj.append('message', formData.message)
+
+      const response = await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataObj,
       })
 
-      const result = await response.json()
-
-      if (response.ok && result.success) {
+      if (response.ok) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
@@ -198,7 +200,8 @@ export default function Contact() {
           >
             <h3 className="text-xl font-bold text-white mb-6">Send a Message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" data-netlify="true" name="contact">
+              <input type="hidden" name="form-name" value="contact" />
               {/* Status Messages */}
               {submitStatus === 'success' && (
                 <motion.div
