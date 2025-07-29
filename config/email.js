@@ -4,7 +4,7 @@
 const emailConfig = {
   gmail: {
     user: 'susantuladhar90@gmail.com',
-    pass: 'lrrv iloc etqw cefp' // Replace this with your actual app password
+    pass: 'lrrv iloc etqw cefp' // Your Gmail App Password (16 characters)
   },
   to: 'susantuladhar90@gmail.com'
 };

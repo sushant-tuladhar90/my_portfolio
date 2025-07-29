@@ -28,7 +28,9 @@ exports.handler = async (event, context) => {
       auth: {
         user: emailConfig.gmail.user,
         pass: emailConfig.gmail.pass
-      }
+      },
+      secure: true,
+      port: 465
     });
 
     // Email content
@@ -80,6 +82,11 @@ exports.handler = async (event, context) => {
 
   } catch (error) {
     console.error('Email sending error:', error);
+    console.error('Error details:', {
+      message: error.message,
+      code: error.code,
+      command: error.command
+    });
     
     return {
       statusCode: 500,
@@ -90,7 +97,8 @@ exports.handler = async (event, context) => {
         'Access-Control-Allow-Methods': 'POST, OPTIONS'
       },
       body: JSON.stringify({ 
-        error: 'Failed to send email. Please try again later.' 
+        error: 'Failed to send email. Please try again later.',
+        details: error.message
       })
     };
   }
