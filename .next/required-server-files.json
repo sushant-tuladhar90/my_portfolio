@@ -46,7 +46,7 @@
         256,
         384
       ],
-      "path": "/_next/image",
+      "path": "/_next/image/",
       "loader": "default",
       "loaderFile": "",
       "domains": [],
@@ -68,7 +68,7 @@
           "hostname": "avatars.githubusercontent.com"
         }
       ],
-      "unoptimized": false
+      "unoptimized": true
     },
     "devIndicators": {
       "position": "bottom-left"
@@ -82,7 +82,7 @@
     },
     "basePath": "",
     "sassOptions": {},
-    "trailingSlash": false,
+    "trailingSlash": true,
     "i18n": null,
     "productionBrowserSourceMaps": false,
     "excludeDefaultMomentLocales": true,
@@ -214,7 +214,6 @@
       "browserDebugInfoInTerminal": false,
       "optimizeRouterScrolling": false,
       "strictNextHead": true,
-      "appDir": true,
       "optimizePackageImports": [
         "lucide-react",
         "date-fns",
