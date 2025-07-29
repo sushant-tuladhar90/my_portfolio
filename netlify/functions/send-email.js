@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const emailConfig = require('../../config/email.js');
 
 exports.handler = async (event, context) => {
   // Only allow POST requests
@@ -25,15 +26,15 @@ exports.handler = async (event, context) => {
     const transporter = nodemailer.createTransporter({
       service: 'gmail',
       auth: {
-        user: process.env.GMAIL_USER, // Your Gmail address
-        pass: process.env.GMAIL_APP_PASSWORD // Gmail App Password
+        user: emailConfig.gmail.user,
+        pass: emailConfig.gmail.pass
       }
     });
 
     // Email content
     const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: 'susantuladhar90@gmail.com', // Your email where you want to receive messages
+      from: emailConfig.gmail.user,
+      to: emailConfig.to,
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
