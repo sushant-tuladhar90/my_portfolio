@@ -76,13 +76,10 @@ export default function Contact() {
     setSubmitStatus(null)
 
     try {
-      // Use Netlify Forms instead of custom function
-      const formDataObj = new FormData()
-      formDataObj.append('name', formData.name)
-      formDataObj.append('email', formData.email)
-      formDataObj.append('subject', formData.subject)
-      formDataObj.append('message', formData.message)
-
+      // Let the form submit naturally to Netlify
+      const form = e.currentTarget
+      const formDataObj = new FormData(form)
+      
       const response = await fetch('/', {
         method: 'POST',
         body: formDataObj,
